@@ -1,0 +1,38 @@
+"""
+Provides a scalar specification URL for specifying the behavior of custom scalar types.
+"""
+directive @specifiedBy(
+  """
+  The URL should point to a human-readable specification of the data format, serialization, and coercion rules.
+  """
+  url: String!
+) on SCALAR
+
+type _Service {
+  sdl: String!
+}
+
+union additional_details = UnionTest1 | UnionTest2
+
+interface Node {
+  id: ID!
+}
+
+type Query {
+  node(id: ID!): Node
+  allUsers: [User!]!
+}
+
+type UnionTest1 {
+  test1string: String
+}
+
+type UnionTest2 {
+  test2string: String
+}
+
+type User implements Node {
+  id: ID!
+  lastName: String!
+}
+
