@@ -37,7 +37,7 @@ var Schema = `
 	}
 	  
 
-	union additional_details = UnionTest1 | UnionTest2
+	union UnionTypeTest = UnionTest1 | UnionTest2
 `
 
 // the users by id

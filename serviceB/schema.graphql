@@ -12,8 +12,6 @@ type _Service {
   sdl: String!
 }
 
-union additional_details = UnionTest1 | UnionTest2
-
 interface Node {
   id: ID!
 }
@@ -30,6 +28,8 @@ type UnionTest1 {
 type UnionTest2 {
   test2string: String
 }
+
+union UnionTypeTest = UnionTest1 | UnionTest2
 
 type User implements Node {
   id: ID!
